@@ -1,0 +1,5 @@
+repositories:
+  krytn:
+    type: git
+    url: git@github.com:johnny555/krytn.git
+    version: humble
