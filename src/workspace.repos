@@ -7,3 +7,7 @@ repositories:
     type: git
     url: git@github.com:johnny555/maci.git
     version: humble
+  maci_moveit:
+    type: git
+    url: git@github.com:johnny555/maci_moveit.git
+    version: humble
