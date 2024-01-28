@@ -3,3 +3,7 @@ repositories:
     type: git
     url: git@github.com:johnny555/krytn.git
     version: humble
+  maci:
+    type: git
+    url: git@github.com:johnny555/maci.git
+    version: humble
