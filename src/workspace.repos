@@ -11,3 +11,7 @@ repositories:
     type: git
     url: git@github.com:johnny555/maci_moveit.git
     version: humble
+  robotiq_arg85_description:
+    type: git
+    url: git@github.com:johnny555/robotiq_arg85_description.git
+    version: humble
