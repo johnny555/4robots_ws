@@ -19,7 +19,8 @@ chown -R ros /workspace
 apt-get install -y ros-humble-rqt-robot-steering ros-humble-slam-toolbox ros-humble-navigation2 \
                     ros-humble-nav2-bringup 
 
-apt-get install clang-format 
+apt-get install clang-format wget
+
 
 # Do an initial build
 
@@ -27,8 +28,8 @@ colcon build --symlink-install
 
 # Get python deps
 
-sudo apt install python3-pip
-pip install black
+sudo apt install python3-pip 
+pip install black urdf-parser-py
 
 # Make it so that sourcing happens automatically
 echo "source /opt/ros/humble/setup.bash" >> /home/ros/.bashrc

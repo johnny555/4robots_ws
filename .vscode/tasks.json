@@ -29,6 +29,13 @@
             "problemMatcher": []
         },
         {
+            "label": "freecad",
+            "detail": "start freecad",
+            "type": "shell",
+            "command": "bash .vscode/scripts/run_freecad.sh",
+            "problemMatcher": []
+        },
+        {
             "label": "clean",
             "detail": "Run the clean target",
             "type": "shell",
