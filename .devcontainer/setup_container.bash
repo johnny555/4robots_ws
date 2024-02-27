@@ -1,35 +1,23 @@
 #!/bin/bash
 
-# -----------------------------------------------------
-
-# Now install Gazebo ign
-apt-get install -y ros-humble-ros-gz
-
 source /opt/ros/humble/local_setup.bash
-rosdep update
-rosdep install --from-paths src --ignore-src -y -r
 
 # Create user ros, and allow it to install stuff. 
 adduser --disabled-password --gecos "docker user" ros
 echo 'ros ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/ros && chmod 0440 /etc/sudoers.d/ros
 chown -R ros /workspace
 
-# Install some extra stuff
 
-apt-get install -y ros-humble-rqt-robot-steering ros-humble-slam-toolbox ros-humble-navigation2 \
-                    ros-humble-nav2-bringup 
+# Setup FreeCAD Cross For FreeCAD
 
-apt-get install clang-format wget
-
-
-# Do an initial build
-
-colcon build --symlink-install
+sudo --user=ros mkdir -p /home/ros/.local/share/FreeCAD/Mod/
+sudo --user=ros git clone https://github.com/galou/freecad.cross.git /home/ros/.local/share/FreeCAD/Mod/freecad.cross
 
 # Get python deps
+sudo --user=ros pip install black urdf-parser-py
 
-sudo apt install python3-pip 
-pip install black urdf-parser-py
+# clean up apt
+
 
 # Make it so that sourcing happens automatically
 echo "source /opt/ros/humble/setup.bash" >> /home/ros/.bashrc
