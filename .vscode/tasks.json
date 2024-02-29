@@ -57,6 +57,13 @@
             "problemMatcher": []
         },
         {
+            "label": "Day 2",
+            "detail": "Test that Gazebo works!",
+            "type": "shell",
+            "command": "bash .vscode/scripts/gazebo_test.sh",
+            "problemMatcher": []
+        },
+        {
             "label": "Krytn Teleoperate",
             "detail": "Teleoperate krytn",
             "type": "shell",
