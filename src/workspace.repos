@@ -1,17 +1,21 @@
 repositories:
+  gz_ros2_control:
+    type: git
+    url: https://github.com/ros-controls/gz_ros2_control.git
+    version: master
   krytn:
     type: git
     url: git@github.com:johnny555/krytn.git
     version: humble
-  maci:
+  ros_gz:
     type: git
-    url: git@github.com:johnny555/maci.git
-    version: humble
-  maci_moveit:
+    url: https://github.com/gazebosim/ros_gz.git
+    version: ros2
+  sprayerbot:
     type: git
-    url: git@github.com:johnny555/maci_moveit.git
+    url: git@github.com:johnny555/sprayerbot.git
     version: humble
-  robotiq_arg85_description:
+  twist_stamper:
     type: git
-    url: git@github.com:johnny555/robotiq_arg85_description.git
-    version: humble
+    url: https://github.com/joshnewans/twist_stamper.git
+    version: main
