@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /opt/ros/humble/local_setup.bash
+source /opt/ros/rolling/local_setup.bash
 
 # Create user ros, and allow it to install stuff. 
 adduser --disabled-password --gecos "docker user" ros
@@ -20,11 +20,11 @@ sudo --user=ros pip install black urdf-parser-py
 
 
 # Make it so that sourcing happens automatically
-echo "source /opt/ros/humble/setup.bash" >> /home/ros/.bashrc
+echo "source /opt/ros/rolling/setup.bash" >> /home/ros/.bashrc
 echo "source /workspace/install/setup.bash" >> /home/ros/.bashrc
 
 # Suppress deprecated setuptools warning
 echo "PYTHONWARNINGS=\"ignore:setup.py install is deprecated::setuptools.command.install,ignore:easy_install command is deprecated::setuptools.command.easy_install\"; export PYTHONWARNINGS" >> /home/ros/.bashrc
 
 # Add GAZEBO path so we can easily include models
-echo "export IGN_GAZEBO_RESOURCE_PATH=/workspace/install/krytn/share/krytn/models/:/opt/ros/humble/share/realsense2_description/meshes/" >> /home/ros/.bashrc
+echo "export IGN_GAZEBO_RESOURCE_PATH=/workspace/install/krytn/share/krytn/models/:/opt/ros/rolling/share/realsense2_description/meshes/" >> /home/ros/.bashrc

@@ -1,7 +1,8 @@
 version: '3'
 services:
-  humble-desktop-full:
-    image: johnny555/4robots:v1
+  iron-desktop-full:
+    image: rolling
+    build: .
     user: ros
     volumes:
       - ../:/workspace:cached

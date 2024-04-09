@@ -90,6 +90,13 @@
             "type": "shell",
             "command": "bash .vscode/scripts/maci_gazebo.sh",
             "problemMatcher": []
+        },
+        {
+            "label": "Run Sprayer",
+            "detail": "Run Sprayer robot simulation",
+            "type": "shell",
+            "command": "bash .vscode/scripts/run_sprayer.sh",
+            "problemMatcher": []
         }
     ]
 }

@@ -1,9 +1,9 @@
 {
-    "name": "4 Robots in 4 Weeks Dev Container",
+    "name": "Sprayerbot Dev Container",
     "dockerComposeFile": [
         "docker-compose.yml"
     ],
-    "service": "humble-desktop-full",
+    "service": "iron-desktop-full",
     "workspaceFolder": "/workspace/",
     "customizations": {
         "vscode": {
