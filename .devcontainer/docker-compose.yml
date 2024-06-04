@@ -3,16 +3,22 @@ services:
   humble-desktop-full:
     image: johnny555/bar:v1
     user: ros
+    privileged: true
     volumes:
       - ../:/workspace:cached
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - /mnt/wslg:/mnt/wslg
-      - /usr/lib/wsl:/usr/lib/wsl
 
     environment:
-      - DISPLAY=:0
+      - DISPLAY=novnc:0.0
       - WAYLAND_DISPLAY
       - XDG_RUNTIME_DIR
       - PULSE_SERVER
 
     command: /bin/sh -c "while sleep 1000; do :; done"
+  novnc:
+    image: theasp/novnc:latest
+    environment:
+      - DISPLAY_WIDTH=1024
+      - DISPLAY_HEIGHT=768
+    ports:
+      - "8080:8080"
+    restart: on-failure
