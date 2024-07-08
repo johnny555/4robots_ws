@@ -22,7 +22,8 @@
                 "jaehyunshim.vscode-ros2",
                 "llvm-vs-code-extensions.vscode-clangd",
                 "ms-python.vscode-pylance",
-                "ms-iot.vscode-ros"
+                "ms-iot.vscode-ros",
+                "github.vscode-pull-request-github"
             ],
             "settings": {
                 "terminal.integrated.profiles.linux": {

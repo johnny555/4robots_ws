@@ -13,6 +13,10 @@ services:
       - XDG_RUNTIME_DIR
       - PULSE_SERVER
 
+    ports:
+      - 9090:9090
+      - 5000:5000
+
     command: /bin/sh -c "while sleep 1000; do :; done"
   novnc:
     image: theasp/novnc:latest
