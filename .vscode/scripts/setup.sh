@@ -9,6 +9,25 @@ fi
 if [ ! -d "src/krytn" ]; then
     vcs import src < src/workspace.repos
 fi
+
+# Is .ssh a directory but not a sym link? 
+if [ -d  ~/.ssh ] && [ ! -h ~/.ssh ]
+    # then directory ~/.ssh exists! Lets copy its keys so we don't lose them on rebuild accross. 
+    echo "Copying keys from ~/.ssh to /workspace/.ssh"
+    mkdir /workspace/.ssh
+    cp ~/.ssh/* /workspace/.ssh
+    echo "symlinking /workspace/.ssh to ~/.ssh"
+    rm -rf ~/.ssh 
+    ln -s /workspace/.ssh ~/.ssh 
+if [ ! -a "~/.ssh" ]; then
+   echo "symlinking /workspace/.ssh to ~/.ssh"
+   mkdir /workspace/.ssh
+   ln -s /workspace/.ssh ~/.ssh
+elif [ ! -a "/workspace/.ssh"]; then 
+   echo "symlinking /workspace/.ssh to ~/.ssh"
+   ln -s /workspace/.ssh ~/.ssh 
+fi
+
 vcs pull src
 sudo apt-get update
 rosdep update --rosdistro=humble
