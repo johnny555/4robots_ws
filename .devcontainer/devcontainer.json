@@ -1,9 +1,9 @@
 {
-    "name": "4 Robots in 4 Weeks Dev Container",
+    "name": "Become A Roboticist - Dev Container",
     "dockerComposeFile": [
-        "docker-compose.yml"
+        "docker-compose-wsl.yml"
     ],
-    "service": "humble-desktop-full",
+    "service": "jazzy-desktop-full",
     "workspaceFolder": "/workspace/",
     "customizations": {
         "vscode": {
