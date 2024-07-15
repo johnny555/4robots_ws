@@ -11,6 +11,6 @@
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
     "python.formatting.provider": "black",
-    "ros.rosSetupScript": "~/huckfin/install/setup.bash",
-    "ros.distro": "humble"
+    "ros.rosSetupScript": "",
+    "ros.distro": "jazzy"
 }
