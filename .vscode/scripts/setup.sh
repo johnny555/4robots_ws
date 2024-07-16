@@ -11,7 +11,10 @@ if [ ! -d "src/krytn" ]; then
 fi
 
 # Is .ssh a directory but not a sym link? 
-if [ -d  ~/.ssh ] && [ ! -h ~/.ssh ]
+if [ -d /workspace/.ssh ]; then
+    echo "/workspace/.ssh directory already exists doing nothing."
+
+elif [ -d  ~/.ssh ] && [ ! -h ~/.ssh ]; then
     # then directory ~/.ssh exists! Lets copy its keys so we don't lose them on rebuild accross. 
     echo "Copying keys from ~/.ssh to /workspace/.ssh"
     mkdir /workspace/.ssh
@@ -19,7 +22,7 @@ if [ -d  ~/.ssh ] && [ ! -h ~/.ssh ]
     echo "symlinking /workspace/.ssh to ~/.ssh"
     rm -rf ~/.ssh 
     ln -s /workspace/.ssh ~/.ssh 
-if [ ! -a "~/.ssh" ]; then
+elif [ ! -a "~/.ssh"  ]; then
    echo "symlinking /workspace/.ssh to ~/.ssh"
    mkdir /workspace/.ssh
    ln -s /workspace/.ssh ~/.ssh
